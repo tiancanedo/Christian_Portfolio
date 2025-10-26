@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Christian Tabanas | Web Developer</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: "Poppins", sans-serif;
+      background: #0f1116;
+      color: #eaeaea;
+      line-height: 1.6;
+    }
+
+    header {
+      background: rgba(20, 20, 20, 0.95);
+      padding: 20px 60px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.5);
+    }
+
+    .logo {
+      font-size: 1.5rem;
+      font-weight: 600;
+    }
+
+    .logo span {
+      color: #00bcd4;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 25px;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ccc;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    nav a:hover {
+      color: #00bcd4;
+    }
+
+    /* ===== HERO ===== */
+    .hero {
+      height: 90vh;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 10%;
+      flex-wrap: wrap;
+    }
+
+    .hero-text {
+      max-width: 500px;
+    }
+
+    .hero-text h1 {
+      font-size: 2.5rem;
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .hero-text h1 span {
+      color: #00bcd4;
+    }
+
+    .hero-text p {
+      color: #aaa;
+      margin-bottom: 25px;
+    }
+
+    .hero-text .btn {
+      background: #00bcd4;
+      color: white;
+      padding: 10px 25px;
+      border-radius: 6px;
+      text-decoration: none;
+      transition: background 0.3s;
+    }
+
+    .hero-text .btn:hover {
+      background: #0192a8;
+    }
+
+    .hero-img img {
+      width: 280px;
+      height: 280px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #00bcd4;
+      box-shadow: 0 0 30px rgba(0,188,212,0.4);
+    }
+
+    /* ===== SECTIONS ===== */
+    section {
+      padding: 80px 10%;
+      text-align: center;
+    }
+
+    section h2 {
+      font-size: 1.8rem;
+      margin-bottom: 30px;
+      position: relative;
+      display: inline-block;
+      color: #00bcd4;
+    }
+
+    section h2::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -8px;
+      width: 100%;
+      height: 3px;
+      background: #00bcd4;
+      border-radius: 2px;
+    }
+
+    /* ===== ABOUT ===== */
+    .about p {
+      max-width: 700px;
+      margin: 0 auto;
+      color: #bbb;
+      line-height: 1.8;
+    }
+
+    /* ===== TECH STACK ===== */
+    .tech-tags {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 30px;
+    }
+
+    .tag {
+      background: rgba(0,188,212,0.15);
+      color: #00bcd4;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-weight: 500;
+      font-size: 0.95rem;
+    }
+
+    /* ===== PROJECTS ===== */
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 25px;
+      margin-top: 40px;
+    }
+
+    .project-card {
+      background: #181b21;
+      padding: 25px;
+      border-radius: 12px;
+      text-align: left;
+      transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 0 15px rgba(0,188,212,0.2);
+    }
+
+    .project-card h4 {
+      color: white;
+      margin-bottom: 10px;
+    }
+
+    .project-card p {
+      color: #aaa;
+      margin-bottom: 15px;
+    }
+
+    .project-card a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    /* ===== CONTACT ===== */
+    .contact p {
+      margin: 10px 0;
+      color: #bbb;
+    }
+
+    .contact a {
+      color: #00bcd4;
+      text-decoration: none;
+    }
+
+    .contact a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      text-align: center;
+      padding: 25px;
+      background: #0b0c10;
+      color: #777;
+      font-size: 0.9rem;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column-reverse;
+        text-align: center;
+        padding-top: 80px;
+      }
+
+      .hero-img img {
+        width: 200px;
+        height: 200px;
+      }
+
+      .hero-text {
+        margin-top: 20px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="logo">Christian<span>Tabanas</span></div>
+    <nav>
+      <ul>
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <div class="hero-text">
+      <h1>Hi, I'm <span>Christian Tabanas</span></h1>
+      <p>A passionate Web Developer specializing in PHP, JavaScript, and modern web technologies.</p>
+      <a href="#projects" class="btn">View My Work</a>
+    </div>
+    <div class="hero-img">
+      <img src="chanooo.jpg" alt="Christian Tabanas">
+    </div>
+  </section>
+
+  <section id="about" class="about">
+    <h2>About Me</h2>
+    <p>
+      I'm a full-stack developer from Cebu City who loves turning ideas into real web applications. 
+      I build responsive, user-friendly, and efficient websites using PHP, HTML, CSS, JavaScript, and MySQL.
+    </p>
+  </section>
+
+  <section id="skills">
+    <h2>Tech Stack</h2>
+    <div class="tech-tags">
+      <span class="tag">HTML5</span>
+      <span class="tag">CSS3</span>
+      <span class="tag">JavaScript</span>
+      <span class="tag">PHP</span>
+      <span class="tag">MySQL</span>
+      <span class="tag">Bootstrap</span>
+      <span class="tag">Responsive Design</span>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <div class="projects">
+      <div class="project-card">
+        <h4>Portfolio Website</h4>
+        <p>A sleek and modern portfolio website built with HTML, CSS, and JavaScript.</p>
+        <a href="#">View Live →</a>
+      </div>
+      <div class="project-card">
+        <h4>Reservation System</h4>
+        <p>A PHP-MySQL based web system for managing sports court reservations efficiently.</p>
+        <a href="#">View on GitHub →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact" class="contact">
+    <h2>Contact</h2>
+    <p>📧 <a href="mailto:tiancanedo@gmail.com">tiancanedo@gmail.com</a></p>
+    <p>🔗 <a href="https://github.com/tiancanedo/Christian_Portfolio/" target="_blank">github.com/christian</a></p>
+    <p>💼 <a href="https://linkedin.com/in/rafael_booc_caburnay" target="_blank">linkedin.com/in/Christian_Tabanas</a></p>
+  </section>
+
+  <footer>
+    © 2025 Christian Tabanas | Web Developer
+  </footer>
+
+</body>
+</html>
